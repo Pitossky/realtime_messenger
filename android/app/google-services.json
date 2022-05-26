@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "807254170655",
+    "project_id": "realtime-messenger-30f01",
+    "storage_bucket": "realtime-messenger-30f01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807254170655:android:1b9a007541c83b4ec5892a",
+        "android_client_info": {
+          "package_name": "com.example.realtime_messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807254170655-p17f49kvgcs6ep35suv99l6i76jon1br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSOk5Ux6_XqZlqGG25d8-TqANkKpsoGEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807254170655-p17f49kvgcs6ep35suv99l6i76jon1br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
