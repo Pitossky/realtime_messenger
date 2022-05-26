@@ -13,13 +13,19 @@ class _MessageTextfieldState extends State<MessageTextfield> {
   String _msgState = '';
   final _txtControl = TextEditingController();
 
-  void _sendMsg() {
+  void _sendMsg() async {
     FocusScope.of(context).unfocus();
     final appUser = FirebaseAuth.instance.currentUser;
+    final userData = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(appUser!.uid)
+        .get();
     FirebaseFirestore.instance.collection('chat').add({
       'text': _msgState,
       'createdAt': Timestamp.now(),
-      'userId': appUser!.uid,
+      'userId': appUser.uid,
+      'username': userData['username'],
+      'userImage': userData['image_url'],
     });
     _txtControl.clear();
   }

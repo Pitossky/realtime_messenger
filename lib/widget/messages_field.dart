@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:realtime_messenger/widget/message_bubble.dart';
 
 class MessageField extends StatelessWidget {
@@ -7,6 +8,8 @@ class MessageField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection('chat')
@@ -27,6 +30,10 @@ class MessageField extends StatelessWidget {
           itemCount: msgDocs.length,
           itemBuilder: (_, i) => MessageBubble(
             msgText: msgDocs[i]['text'],
+            userStatus: msgDocs[i]['userId'] == user!.uid,
+            key: ValueKey(msgDocs[i].id),
+            username: msgDocs[i]['username'],
+            userImage: msgDocs[i]['userImage'],
           ),
         );
       },

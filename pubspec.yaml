@@ -48,7 +48,9 @@ dev_dependencies:
   cloud_firestore:
   firebase_core:
   firebase_auth:
-
+  image_picker:
+  firebase_storage:
+  firebase_messaging:
 
 
 # For information on the generic Dart part of this file, see the
